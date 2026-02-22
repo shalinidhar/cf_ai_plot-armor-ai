@@ -1,0 +1,47 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "server",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-02-22",
+  "d1_databases": [
+		{
+			"binding": "plot_armor_db",
+			"database_name": "plot-armor-db",
+			"database_id": "fca37fba-559c-481a-963e-749862189ead",
+			"remote": true
+		}
+	],
+  "ai": {
+    "binding": "AI"
+  },
+  	"workflows": [
+		{
+			"name": "story-analyzer-workflow",
+			"binding": "STORY_WORKFLOW",
+			"class_name": "StoryAnalyzerWorkflow"
+		}
+  	],
+  // "compatibility_flags": [
+  //   "nodejs_compat"
+  // ],
+  // "vars": {
+  //   "MY_VAR": "my-variable"
+  // },
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "MY_KV_NAMESPACE",
+  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  //   }
+  // ],
+  // "r2_buckets": [
+  //   {
+  //     "binding": "MY_BUCKET",
+  //     "bucket_name": "my-bucket"
+  //   }
+  // ],
+
+  // "observability": {
+  //   "enabled": true,
+  //   "head_sampling_rate": 1
+  // }
+}
