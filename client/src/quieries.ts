@@ -1,10 +1,12 @@
+const API_BASE = import.meta.env.VITE_API_URL || '';
+
 export async function getStoryBible() {
-  const response = await fetch('/api/story_bible');
+  const response = await fetch(`${API_BASE}/api/story_bible`);
   return await response.json() as {success: boolean, data?: any, message?: string};
 }
   
 export async function saveStoryBible(settings: any, characters: any[]) {
-  const response = await fetch('/api/save_bible', {
+  const response = await fetch(`${API_BASE}/api/save_bible`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ 
@@ -16,12 +18,12 @@ export async function saveStoryBible(settings: any, characters: any[]) {
 }
 
 export async function getStory() {
-  const response = await fetch('/api/text');
+  const response = await fetch(`${API_BASE}/api/text`);
   return await response.json() as {success: boolean, data?: any, message?: string};
 }
 
 export async function saveStoryText(title: any, body: any) {
-  const response = await fetch('/api/save_text', {
+  const response = await fetch(`${API_BASE}/api/save_text`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ title: title, body: body })

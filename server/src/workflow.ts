@@ -33,7 +33,10 @@ export class StoryAnalyzerWorkflow extends WorkflowEntrypoint<Env, StoryParams> 
       const prompt = `
         You are a story continuity expert. Compare the following story draft 
         against these character facts: ${JSON.stringify(story_bible)}.
-        Identify any contradictions or plot holes.
+        Your tasks is to simply identy any continuity issues or plot holes in 
+        the draft based on the character facts. Ignore minute details like typos, 
+        grammar, or writing style. Focus only on major plot inconsistencies or 
+        character contradictions.
         
         Draft: "${draft}"
         Title: "${title}"

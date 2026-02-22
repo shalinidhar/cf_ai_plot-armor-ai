@@ -8,12 +8,12 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8787', // Adjust the port if your Flask server runs on a different one
+        target: 'http://127.0.0.1:8787', 
         changeOrigin: true,
         secure: false,
       },
       '/workflow': {
-        target: 'http://127.0.0.1:8787', // Adjust the port if your Flask server runs on a different one
+        target: 'http://127.0.0.1:8787', 
         changeOrigin: true,
         secure: false,
       },

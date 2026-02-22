@@ -10,10 +10,12 @@ interface StoryBible {
   characters: any[]
 }
 
+const API_BASE = import.meta.env.VITE_API_URL || '';
+
 //Triggering the Workflow and retrieving the response
 
 export async function startAnalysis(draftText: string, draftTitle: string, bible: StoryBible) {
-  const response = await fetch('/workflow/start_analysis', {
+  const response = await fetch(`${API_BASE}/workflow/start_analysis`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ draft: draftText, title: draftTitle, story_bible: bible })
@@ -23,6 +25,6 @@ export async function startAnalysis(draftText: string, draftTitle: string, bible
 
 
 export async function getLatestLog() {
-  const response = await fetch('/workflow/latest_log');
+  const response = await fetch(`${API_BASE}/workflow/latest_log`);
   return await response.json() as {success: boolean, analysis?: any, message?: string};
 }
