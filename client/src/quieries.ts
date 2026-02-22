@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_URL || 'https://server.shalinidhar101.workers.dev';
+const API_BASE = 'https://server.shalinidhar101.workers.dev';
 
 export async function getStoryBible() {
   const response = await fetch(`${API_BASE}/api/story_bible`);
