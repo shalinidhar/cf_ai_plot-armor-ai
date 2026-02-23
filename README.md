@@ -1,6 +1,9 @@
 # -- Plot Armor AI -- 
 A full-stack story continuity assistant. Use AI to scan your drafts against your "Story Bible" to find plot holes and character contradictions before they reach your readers.
 
+# Link to Project 
+https://6f3e028b.plot-armor-ai.pages.dev/
+
 # Project Structure
 This is a monorepo containing both the frontend and backend services:
 
@@ -13,7 +16,7 @@ Frontend: React, Vite, Tailwind CSS v4, Lucide React (Icons)
 
 Backend: Hono, Cloudflare Workers, Cloudflare Workflows
 
-AI: Llama 3.3 70B (via Cloudflare Workers AI)
+AI: Llama 3.1 8B (via Cloudflare Workers AI)
 
 Database: Cloudflare D1 (SQLite)
 

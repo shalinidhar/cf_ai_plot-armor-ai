@@ -30,3 +30,7 @@ about tech stack as well as information about installing the project
 it say 0 files uploaded
 
 - How to set up CORS for my hono app?
+
+- Provide a short story for demonstration. Make it the start of a fantasy with 
+two characters. Provide a list of character traits and make sure that these 
+traits clash with the ones presented in the story
