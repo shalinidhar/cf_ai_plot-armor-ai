@@ -21,4 +21,7 @@ characters including name, race, personality, traits and relationship
 - How should I use Cloudflare Workflows to accept prompts and generate an AI 
 respone. I want to use Llama 3.3 
 
+- Generate a README.md file for this project. It should contain information
+about tech stack as well as information about installing the project
+
 - How should I deploy my server and front end vite application? 
