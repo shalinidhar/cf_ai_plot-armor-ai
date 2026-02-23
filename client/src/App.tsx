@@ -23,7 +23,7 @@ export default function App() {
 
   useEffect(() => {
     async function load() {
-      setStoryText('test');
+      setStoryText('text');
       const result2 = await getStory();
       if (result2.success && result2.data?.story) {
         setStoryText(result2.data.story.body || '');

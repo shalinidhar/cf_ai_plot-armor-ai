@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
-import { serveStatic } from 'hono/cloudflare-workers'
+// import { serveStatic } from 'hono/cloudflare-workers'
+import { cors } from 'hono/cors'
 //import { StoryAnalyzerWorkflow } from '../../server/workflow'
 
 type Bindings = {
@@ -7,7 +8,33 @@ type Bindings = {
   STORY_WORKFLOW: Workflow
 }
 
+
 const app = new Hono<{ Bindings: Bindings }>()
+
+// Applying CORS
+app.use('/api/*', cors({
+  origin: (origin) => {
+    if (origin.endsWith('.plot-armor-ai.pages.dev')) {
+      return origin;
+    }
+    return null;
+  },
+  allowMethods: ['GET', 'POST', 'PUT', 'OPTIONS'],
+  allowHeaders: ['Content-Type'],
+  credentials: true,
+}))
+
+app.use('/workflow/*', cors({
+  origin: (origin) => {
+    if (origin.endsWith('.plot-armor-ai.pages.dev')) {
+      return origin;
+    }
+    return null;
+  },
+  allowMethods: ['GET', 'POST', 'PUT', 'OPTIONS'],
+  allowHeaders: ['Content-Type'],
+  credentials: true,
+}))
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')

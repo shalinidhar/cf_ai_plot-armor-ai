@@ -6,7 +6,7 @@ export async function getStoryBible() {
 }
   
 export async function saveStoryBible(settings: any, characters: any[]) {
-  const response = await fetch(`${API_BASE}/api/save_bible`, {
+  const response = await fetch(`https://server.shalinidhar101.workers.dev/api/save_bible`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ 
@@ -18,7 +18,7 @@ export async function saveStoryBible(settings: any, characters: any[]) {
 }
 
 export async function getStory() {
-  const response = await fetch(`${API_BASE}/api/text`);
+  const response = await fetch(`https://server.shalinidhar101.workers.dev/api/text`);
   return await response.json() as {success: boolean, data?: any, message?: string};
 }
 

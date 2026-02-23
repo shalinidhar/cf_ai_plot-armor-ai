@@ -43,10 +43,10 @@ export class StoryAnalyzerWorkflow extends WorkflowEntrypoint<Env, StoryParams> 
       `;
 
       const result = await this.env.AI.run('@cf/meta/llama-3.3-70b-instruct-fp8-fast', {
-        prompt: prompt, max_tokens: 25
+        prompt: prompt, max_tokens: 500
       });
 
-      return (result as any).response.response || "No analysis generated.";
+      return (result as any).response || "No analysis generated.";
     });
 
     // Recording the anaysis result. 

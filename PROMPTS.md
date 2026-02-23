@@ -25,3 +25,8 @@ respone. I want to use Llama 3.3
 about tech stack as well as information about installing the project
 
 - How should I deploy my server and front end vite application? 
+
+- I am am trying to deploy my vite application with cloudflare pages. Why does 
+it say 0 files uploaded
+
+- How to set up CORS for my hono app?
